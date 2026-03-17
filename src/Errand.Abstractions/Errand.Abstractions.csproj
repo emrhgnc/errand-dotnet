@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Multi-target for broad compatibility: supports both netstandard2.0 consumers
+         (e.g., SourceGenerator referencing interfaces) and net8.0 consumers -->
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+
+    <!-- NuGet package metadata -->
+    <PackageId>Errand.Abstractions</PackageId>
+    <Description>Core interfaces and contracts for the Errand mediator library.</Description>
+    <Tags>mediator;cqrs;source-generator;aot</Tags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- ValueTask<T> is built-in on net8.0 but requires a package on netstandard2.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Roslyn source generators must target netstandard2.0 -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+
+    <!-- Marks this assembly as a Roslyn analyzer/generator -->
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+    <!-- NuGet package metadata -->
+    <PackageId>Errand.SourceGenerator</PackageId>
+    <Description>Roslyn source generator for Errand. Scans IErrandHandler implementations at compile time and generates reflection-free dispatch code.</Description>
+    <Tags>mediator;source-generator;roslyn;aot</Tags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Suppress warnings from Roslyn analyzer rules during development -->
+    <NoWarn>$(NoWarn);RS2008</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Expose internals to the test project so ConflictDetector, HandlerMetadata etc. can be unit-tested -->
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>Errand.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Roslyn API packages (must be PrivateAssets to avoid leaking into consumer projects) -->
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

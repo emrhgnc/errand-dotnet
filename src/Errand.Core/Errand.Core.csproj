@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+
+    <!-- NuGet package metadata -->
+    <PackageId>Errand.Core</PackageId>
+    <Description>High-performance, reflection-free mediator implementation for .NET 8+. Requires Errand.SourceGenerator to generate dispatch code at compile time.</Description>
+    <Tags>mediator;cqrs;source-generator;aot;performance</Tags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Errand.Abstractions\Errand.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- IServiceCollection, ServiceDescriptor — Abstractions only, no full DI container dep -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
