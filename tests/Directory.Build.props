@@ -1,0 +1,9 @@
+<Project>
+
+  <!-- Override settings specifically for test projects -->
+  <PropertyGroup>
+    <!-- Test projects don't need XML documentation -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>

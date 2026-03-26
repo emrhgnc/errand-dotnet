@@ -1,0 +1,38 @@
+<Project>
+
+  <PropertyGroup>
+    <!-- Shared version for all packages -->
+    <VersionPrefix>0.1.0</VersionPrefix>
+
+    <!-- Package authors and metadata -->
+    <Authors>Errand Contributors</Authors>
+    <Copyright>Copyright © 2025 Errand Contributors</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+
+    <!-- Code quality settings applied to all projects -->
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>5</WarningLevel>
+
+    <!-- XML documentation for all public projects -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Source link for NuGet debugging support -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Deterministic builds for reproducibility -->
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+
+    <!-- Suppress NuGet vulnerability check warning when offline (NU1900) -->
+    <NoWarn>$(NoWarn);NU1900</NoWarn>
+  </PropertyGroup>
+
+</Project>

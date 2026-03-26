@@ -1,0 +1,46 @@
+## .NET / C#
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+.vs/
+
+## Build outputs
+artifacts/
+publish/
+nupkg/
+*.nupkg
+*.snupkg
+
+## Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## IDE
+.idea/
+.vscode/
+*.DotSettings.user
+*.piconfig
+
+## OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+## NuGet
+*.nuget.props
+*.nuget.targets
+packages/
+project.lock.json
+project.fragment.lock.json
+
+## Roslyn generated files (keep the .g.cs for debugging, ignore IDE cache)
+*.GeneratedMSBuildEditorConfig.editorconfig
+
+## Benchmark results
+BenchmarkDotNet.Artifacts/

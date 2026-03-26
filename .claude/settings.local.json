@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet --version)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet nuget:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet test:*)",
+      "Bash(gh auth:*)",
+      "Bash(where gh:*)",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo create errand-dotnet --public --description \"Reflection-free, Native AOT-compatible Mediator for .NET 8+. Handlers wired at compile time via Roslyn source generator.\" --source . --remote origin --push)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo edit emrhgnc/errand-dotnet --default-branch main)",
+      "Bash(find C:Usersemrah.gencDesktopTestProjectsErrandTestErrandExampleProject -type d -not -path */obj* -not -path */bin* -not -path */.vs*)"
+    ]
+  }
+}
